@@ -1,7 +1,7 @@
-file and directory  
+[file and directory](file_directory.md)  
 [text](text.md)  
-mouse and keyboard  
-web  
-excel  
-google sheet  
-gmail  
+[mouse and keyboard](mouse_keyboard.md)  
+[web](web.md)  
+[excel](excel.md)  
+[google sheet](google_sheet.md)  
+[gmail](gmail.md)  
