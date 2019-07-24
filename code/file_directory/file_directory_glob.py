@@ -3,7 +3,10 @@ import os
 import glob
 import shutil
 
-root = r'C:\mawp\code\file_directory\root'
+
+cwd = os.getcwd()
+root = os.path.join(cwd, 'root')
+print(root)
 
 def understand_glob(root):
 	# search all .txt file under root only
@@ -46,8 +49,8 @@ def copy_all_files_with_extension(source, destination, extension):
 
 understand_glob(root)
 
-list_all_file_in_directory(root)
+# list_all_file_in_directory(root)
 
-source = r'C:\mawp\code\file_directory\root'
-destination = r'C:\mawp\code\file_directory\destination'
-copy_all_files_with_extension(source, destination, '.txt')
+# source = r'C:\mawp\code\file_directory\root'
+# destination = r'C:\mawp\code\file_directory\destination'
+# copy_all_files_with_extension(source, destination, '.txt')

@@ -7,3 +7,9 @@
 	https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
 -->
 
+task 1
+
+task 2
+
+os module
+

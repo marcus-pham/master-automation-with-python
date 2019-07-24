@@ -38,12 +38,16 @@ def copy_all_file_with_extension(source, destination, extension):
 				shutil.copy(os.path.join(path,file), destination)
 
 
-root = r'C:\mawp\code\file_directory\root'
+
+cwd = os.getcwd()
+root = os.path.join(cwd, 'root')
+print(root)
+
 understand_walk(root)
 understand_walk_with_for_loop(root)
 list_all_file_in_directory(root)
 
 
-source = r'C:\mawp\code\file_directory\root'
-destination = r'C:\mawp\code\file_directory\destination'
+source = root
+destination = os.path.join(cwd, 'destination')
 copy_all_file_with_extension(source, destination, '.txt')
