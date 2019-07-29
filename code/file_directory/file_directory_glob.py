@@ -23,9 +23,8 @@ def search_all_level(root):
 def copy_files_with_extension(source, destination, extension):
 	pattern = os.path.join(source,'**\*.{0}'.format(extension))
 	files = glob.glob(pattern, recursive=True)
-	print(files)
-	# shutil.copy(item, destination)
 
-# source = r'C:\mawp\code\file_directory\source'
-# destination = r'C:\mawp\code\file_directory\destination'
+	for file in files:
+		shutil.copy(file, destination)
+
 copy_files_with_extension('source', 'destination', 'txt')
