@@ -1,56 +1,31 @@
-# understand glob
 import os
 import glob
 import shutil
 
 
-cwd = os.getcwd()
-root = os.path.join(cwd, 'root')
-print(root)
+def search_one_level(root):
+	pattern = '*.txt'
+	absolute_pattern = os.path.join(root, pattern)
+	result = glob.glob(absolute_pattern)
+	print(result)
 
-def understand_glob(root):
-	# search all .txt file under root only
-	txt_files_no_recursive = glob.glob(os.path.join(root, '*.txt'))
-	print(txt_files_no_recursive)
+# search_one_level(root='source')
 
-	# search all file .txt under root recursively
-	txt_files_recursive = glob.glob(os.path.join(root, '**/*.txt'), recursive=True)
-	print(txt_files_recursive)
+def search_all_level(root):
+	pattern = '**\*.txt'
+	absolute_pattern = os.path.join('source', pattern)
+	result = glob.glob(absolute_pattern, recursive=True)
+	print(result)
 
-	# search all file and directory under root recursively
-	files_dirs_recursive = glob.glob(os.path.join(root, '**'), recursive=True)
-	print(files_dirs_recursive)
-
-
-def list_all_file_in_directory(root):
-	'''
-		Do search recursively inside directory
-	'''
-	files_dirs = glob.glob(os.path.join(root, '**'), recursive=True)
-	# print(files_dirs)
-
-	for item in files_dirs:
-		if os.path.isfile(item):
-			print(item)
+# search_all_level(root='source')
 
 
-def copy_all_files_with_extension(source, destination, extension):
-	'''
-		Do search recursively inside directory
-	'''
-	files_dirs = glob.glob(os.path.join(root, '**'), recursive=True)
-	for item in files_dirs:
-		if os.path.isfile(item):
-			if item.endswith(extension):
-				print(item)
-				shutil.copy(item, destination)
+def copy_files_with_extension(source, destination, extension):
+	pattern = os.path.join(source,'**\*.{0}'.format(extension))
+	files = glob.glob(pattern, recursive=True)
+	print(files)
+	# shutil.copy(item, destination)
 
-
-
-understand_glob(root)
-
-# list_all_file_in_directory(root)
-
-# source = r'C:\mawp\code\file_directory\root'
+# source = r'C:\mawp\code\file_directory\source'
 # destination = r'C:\mawp\code\file_directory\destination'
-# copy_all_files_with_extension(source, destination, '.txt')
+copy_files_with_extension('source', 'destination', 'txt')

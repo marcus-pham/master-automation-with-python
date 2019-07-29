@@ -44,10 +44,10 @@ root = os.path.join(cwd, 'root')
 print(root)
 
 understand_walk(root)
-understand_walk_with_for_loop(root)
-list_all_file_in_directory(root)
+# understand_walk_with_for_loop(root)
+# list_all_file_in_directory(root)
 
 
-source = root
-destination = os.path.join(cwd, 'destination')
-copy_all_file_with_extension(source, destination, '.txt')
+# source = root
+# destination = os.path.join(cwd, 'destination')
+# copy_all_file_with_extension(source, destination, '.txt')
