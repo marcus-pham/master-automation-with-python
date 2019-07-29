@@ -1,8 +1,6 @@
 import re
 
 
-
-
 text = 'gfgfdAAA1234ZZZuijjk'
 m = re.search('AAA(.+?)ZZZ', text)
 if m:
