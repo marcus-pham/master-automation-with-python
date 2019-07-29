@@ -1,13 +1,7 @@
-# scenario
-# create markdown toc
-# https://github.com/jonschlinkert/markdown-toc
-
 import glob
 import os
 import shutil
 
-# os.walk
-# https://stackoverflow.com/questions/10989005/do-i-understand-os-walk-right
 def understand_walk(root):
 	path = next(os.walk(root))[0]
 	print('path', path)
@@ -44,10 +38,3 @@ root = os.path.join(cwd, 'root')
 print(root)
 
 understand_walk(root)
-# understand_walk_with_for_loop(root)
-# list_all_file_in_directory(root)
-
-
-# source = root
-# destination = os.path.join(cwd, 'destination')
-# copy_all_file_with_extension(source, destination, '.txt')

@@ -1,16 +1,57 @@
-Normally to working with file system in python we use following package 
+#### Objectives
 
-### Objectives
-
-Copy all ".txt" files recursively. For easy of demo, support we have following structure of folder and file.
-
-inside `source` are 3 levels of folder 1,2,3. In each folder has one `txt` file with name same with folder name.
+Suppose we have `source`. Inside `source` are 3 levels of folder 1,2,3. In each folder has one `txt` file with name same with folder name.
 
 ![](images/2019-07-29_10-34-56.png)
 
 
 
-#### Use os.path.join
+We want to write a program to copy all `.txt` file from `source` folder to `destination` folder.
+
+#### Use os.path
+
+##### Join function
+
+We use **os.path.join()** function to constructs a pathname out of one or more partial pathnames. For example, following code print out the full name of file `1.txt`
+
+```python
+import os
+
+directory_name = r'C:\automate\code\file_directory\source'
+file_name = '1.txt'
+full_name = os.path.join(directory_name, file_name)
+
+print(full_name)
+```
+
+Out put is
+
+```python
+"""
+C:\automate\code\file_directory\source\1.txt
+"""
+```
+
+
+
+##### Split function
+
+Opposite with `join` is `split` function. Let try following code.
+
+```python
+full_name = r'C:\automate\code\file_directory\source\1.txt'
+split_result = os.path.split(full_name)
+
+print(split_result)
+```
+
+Result will be a tuple contain directory and file name.
+
+```python
+"""
+('C:\\automate\\code\\file_directory\\source', '1.txt')
+"""
+```
 
 
 
@@ -70,7 +111,7 @@ Print out result
 
 ##### Copy all ".txt" Files Recursively
 
-Now we already know how to search for all `.txt` file. To copy a file to directory, we use function `copy` inside `shutil` package. That it, mission accomplished.
+Now we already know how to search for all `.txt` file. To copy a file to directory, we use function `copy` inside `shutil` package.
 
 ```python
 def copy_files_with_extension(source, destination, extension):
@@ -83,7 +124,7 @@ def copy_files_with_extension(source, destination, extension):
 copy_files_with_extension('source', 'destination', 'txt')
 ```
 
-After running, inside `destination` will have copied file.
+After running, inside `destination` will have copied file.  That it, mission accomplished.
 
 ![](images/2019-07-29_14-22-30.png)
 
