@@ -13,15 +13,10 @@ https://regexone.com/problem/matching_emails
 https://regexone.com/problem/matching_phone_numbers
 
 * Capitalizes all of the words in a string use `string` package
+
 * Extract email and phone number from text use `re` package
 
-
-
-
-
-
-
-
+  
 
 #### Capitalizes all of the words in a string
 
